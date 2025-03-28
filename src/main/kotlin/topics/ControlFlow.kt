@@ -38,6 +38,46 @@ fun usingWhenAsExpression(value: Int): String {
     }
 }
 
+fun usingWhile() {
+    var counter = 0
+    while (counter < 10) {
+        println("the counter is: $counter")
+
+        if (counter == 3) {
+            println("BREAK at: $counter")
+            break
+        }
+        counter++
+    }
+}
+
+fun usingDoWhile() {
+    var counter = 0
+    do {
+        println("the counter is: $counter")
+
+        if (counter == 3) {
+            println("BREAK at: $counter")
+            break
+        }
+        counter++
+    } while (counter < 10)
+}
+
+fun usingFor(){
+    println("right not included")
+    for (i in 0 until 10) println("counter $i")
+
+    println("right included")
+    for (i in 0 .. 10) println("counter $i")
+
+    println("down to, included")
+    for (i in 10 downTo 0) println("counter $i")
+
+    println("down to, included, with step")
+    for (i in 10 downTo 0 step 2) println("counter $i")
+}
+
 
 fun main() {
 
@@ -54,14 +94,22 @@ fun main() {
     usingWhen(30)
 
     println("---- usingIfAsExpression ----")
-    println( usingIfAsExpression(-5))
-    println( usingIfAsExpression(18))
-    println( usingIfAsExpression(30))
+    println(usingIfAsExpression(-5))
+    println(usingIfAsExpression(18))
+    println(usingIfAsExpression(30))
 
     println("---- usingWhenAsExpression ----")
-    println( usingWhenAsExpression(-5))
-    println( usingWhenAsExpression(18))
-    println( usingWhenAsExpression(30))
+    println(usingWhenAsExpression(-5))
+    println(usingWhenAsExpression(18))
+    println(usingWhenAsExpression(30))
 
+    println("---- usingWhile ----")
+    usingWhile()
+
+    println("---- usingDoWhile ----")
+    usingDoWhile()
+
+    println("---- usingFor ----")
+    usingFor()
 
 }
